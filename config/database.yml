@@ -48,8 +48,8 @@ test:
 #
 production:
   <<: *default
-  database: byteally
-  username: nawdeep
-  password: 
+  database: d2dngcdnfgadns
+  username: iemxirqncbjvzv
+  password: 78e805d7cfa6a251721606b1fdcf18a4659f3b003a2ff86f2d4a7b94aec8b3f7
 
  
