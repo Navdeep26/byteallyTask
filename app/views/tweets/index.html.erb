@@ -1,0 +1,56 @@
+<div class="input_field">
+	
+	<input type="text" name="tweet" id="tweet" placeholder="Enter Your Tweet Here" maxlength="124"><br>
+	<input type="submit" value="tweet" id="submit">
+
+</div>
+
+<div id="textarea_feedback">
+	
+</div>
+
+
+	<% @tweets.each do |tweet|%>
+
+<div class="input_field">
+	<%= tweet.contant%><hr>
+</div>	
+	<% end %>
+
+
+
+
+			
+			<script>
+				$(document).ready(function(){
+				
+
+					$('#submit').click(function(){
+					var value = $('#tweet').val();
+				    $.post("/tweets",
+				    {
+				        tweet: value
+				        
+				    },
+				    function(data, status){
+				        
+				        $('#print').html(data);
+				    });
+					});
+				});
+			</script>
+
+
+			<script>
+				$(document).ready(function(){
+
+					var text_max = 124;
+					$('#textarea_feedback').html(text_max + ' characters remaining');
+					$('#tweet').keyup(function(){
+
+						var text_length = $('#tweet').val().length;
+						var text_remaining = text_max - text_length;
+						$('#textarea_feedback').html(text_remaining + ' characters remaining')
+					});
+				});
+			</script>
