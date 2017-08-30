@@ -1,8 +1,8 @@
 <p class="btn btn-success btn-lg" id="notice"><%= notice %></p><br>
-<% if current_user%>
-<p class="text-center text_color">Welcome <%= current_user.name%></p>
-<img class="margin" src="<%= current_user.image%>" >
-<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+<% if current_user %>
+	<p class="text-center text_color">Welcome <%= current_user.name %></p>
+	<img class="margin" src="<%= current_user.image %>" >
+	<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
 <% end %>
 
 
@@ -18,7 +18,6 @@
 
 <% if @tweets.present? %>
 	<% @tweets.each do |tweet|%>
-	<%=logger.info(tweet.inspect)%>
 		<div class="input_field">
 			<h3><%= tweet.user.name%><br></h3>
 			<h5><%= tweet.contant %><hr></h5>

@@ -2,9 +2,9 @@ class TweetsController < ApplicationController
 
 	def index
 		if current_user.present?
-		@tweets = Tweet.all.order(created_at: :desc)
+			@tweets = Tweet.all.order(created_at: :desc)
 		else
-		redirect_to root_path
+			redirect_to root_path
 		end
 	end
 
