@@ -13,6 +13,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to root_path, :notice => "Signed Out"
+		redirect_to root_path, :notice => "Sucessfully Signed Out"
 	end
 end

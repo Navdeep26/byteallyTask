@@ -7,7 +7,7 @@
 
 
 <div class="input_field">
-	<input type="textarea" class="form-control" placeholder="Enter Your Tweet Here" maxlength="124">
+	<input type="textarea" id="tweet" class="form-control" placeholder="Enter Your Tweet Here" maxlength="124">
 	<input style="color: #1DA1F2" class="btn-sm input" type="submit" value="tweet" id="submit">
 
 </div>
@@ -18,8 +18,10 @@
 
 <% if @tweets.present? %>
 	<% @tweets.each do |tweet|%>
+	<%=logger.info(tweet.inspect)%>
 		<div class="input_field">
-			<%= tweet.contant %><hr>
+			<h3><%= tweet.user.name%><br></h3>
+			<h5><%= tweet.contant %><hr></h5>
 		</div>	
 	<% end %>
 <% end %>

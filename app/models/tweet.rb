@@ -1,5 +1,5 @@
 class Tweet < ApplicationRecord
-
+belongs_to :user
 
 	validates :contant, length: { maximum: 124}
 	def self.create_tweet(tweet,id)
