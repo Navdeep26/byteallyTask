@@ -15,11 +15,20 @@
  */
 .input_field{
 	background-color: white;
-	
+	border-radius: 15px;
 	padding: 15px;
 }
 
 .submit_field{
 
 	padding-top: 2px;
+}
+
+.text_color{
+	color: white;
+}
+
+.margin{
+
+	margin-left: 50%;
 }

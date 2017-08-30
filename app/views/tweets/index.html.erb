@@ -1,7 +1,14 @@
+<p class="btn btn-success btn-lg" id="notice"><%= notice %></p><br>
+<% if current_user%>
+<p class="text-center text_color">Welcome <%= current_user.name%></p>
+<img class="margin" src="<%= current_user.image%>" >
+<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+<% end %>
+
+
 <div class="input_field">
-	
-	<input type="text" name="tweet" id="tweet" placeholder="Enter Your Tweet Here" maxlength="124"><br>
-	<input type="submit" value="tweet" id="submit">
+	<input type="textarea" class="form-control" placeholder="Enter Your Tweet Here" maxlength="124">
+	<input style="color: #1DA1F2" class="btn-sm input" type="submit" value="tweet" id="submit">
 
 </div>
 
@@ -28,7 +35,7 @@
 		    },
 		    function(data, status){
 		        
-		        $('#print').html(data);
+		       
 		    });
 		});
 
