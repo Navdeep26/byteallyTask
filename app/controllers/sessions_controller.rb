@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
 	def show
+		if current_user.present?
+			redirect_to tweets_path
+		end
 	end
 
 	def create

@@ -1,33 +1,42 @@
-<p class="btn btn-success btn-lg" id="notice"><%= notice %></p><br>
+<p  id="notice"><%= notice %></p><br>
 <% if current_user %>
-	<p class="text-center text_color">Welcome <%= current_user.name %></p>
-	<img class="margin" src="<%= current_user.image %>" >
-	<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-1 ">
+			<img class="img-circle image_size" src="<%= current_user.image %>" >
+		</div>
+		<div class="col-md-3" >
+			<h4 class= "name_color">Welcome <%= current_user.name %>!</h4> 
+			<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+		</div>
+	</div>
+	
+	
 <% end %>
 
 
 <div class="input_field">
-	<input type="textarea" id="tweet" class="form-control" placeholder="Enter Your Tweet Here" maxlength="124">
-	<input style="color: #1DA1F2" class="btn-sm input" type="submit" value="tweet" id="submit">
-
-</div>
-
-<div id="textarea_feedback">
+	<div class="row">
+		<input type="textarea" id="tweet" class="textarea" placeholder="Enter Your Tweet Here" maxlength="124">
+		<input style="color: #1DA1F2" class="btn-sm input" type="submit" value="tweet" id="submit">
+	</div>
 	
+
 </div>
+
+<h5 class="text" id="textarea_feedback"></h5>
 
 <% if @tweets.present? %>
 	<% @tweets.each do |tweet|%>
-		<div class="input_field">
-			<h3><%= tweet.user.name%><br></h3>
-			<h5><%= tweet.contant %><hr></h5>
+		<div class="input_field margin">
+			<div><h3><%= tweet.user.name%> <small><%= tweet.contant %></small></h3></div>
 		</div>	
 	<% end %>
 <% end %>
 			
 <script>
 	$(document).ready(function(){
-	
+		
 		$('#submit').click(function(){
 			var value = $('#tweet').val();
 		    $.post("/tweets",
@@ -45,12 +54,15 @@
 			$('#tweet').keyup(function(){
 
 				var text_length = $('#tweet').val().length;
+
 				var text_remaining = text_max - text_length;
 				$('#textarea_feedback').html(text_remaining + ' characters remaining')
 			});
 
 		});
 </script>
+
+
 
 
 			
