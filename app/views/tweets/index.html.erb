@@ -2,12 +2,12 @@
 <% if current_user %>
 	<div class="row">
 		<div class="col-md-3"></div>
-		<div class="col-md-1 ">
+		<div class="col-md-1 margin_bottom">
 			<img class="img-circle image_size" src="<%= current_user.image %>" >
 		</div>
 		<div class="col-md-3" >
 			<h4 class= "name_color">Welcome <%= current_user.name %>!</h4> 
-			<%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+			
 		</div>
 	</div>
 	

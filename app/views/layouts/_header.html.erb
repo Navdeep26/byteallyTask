@@ -14,6 +14,10 @@
        </h2>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-  </div><!-- /.container-fluid -->
+    <ul class="nav navbar-nav navbar-right navbar-header navbar-brand">
+      <% if current_user.present? %>
+        <%= link_to "Sign Out", signout_path, class:"btn btn-primary"%>
+      <% end %>
+    </ul>
+  </div>
 </nav>
