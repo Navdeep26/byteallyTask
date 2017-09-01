@@ -19,18 +19,18 @@
 	padding: 15px;
 }
 
+
 .submit_field{
 
 	padding-top: 2px;
 }
 
-.text_color{
-	color: white;
+.bwhite{
+	background-color: white;
 }
 
-.margin{
-
-	margin-left: 50%;
+.text_color{
+	color: white;
 }
 
 .image_size{
@@ -44,17 +44,17 @@
 	color: #00AEEF;
 }
 
-.textarea{
-	 width: 92%;
-}
+
 
 .text{
 	color: brown;
 }
 
 .margin{
-	margin-top: 30px;
-	margin-left: 1px;
+
+	 margin-left: : 20%;
+	 margin-bottom: 3%;
+	 margin-top: 10px;
 }
 
 .margin_bottom{
@@ -74,4 +74,16 @@
 	width: 50px;
 	border-radius: 15px;
 
+}
+
+.mleft{
+	margin-left: 45%;
+}
+
+.margintop{
+	margin-top: 40px;
+}
+
+.padding{
+	padding: 20%;
 }
